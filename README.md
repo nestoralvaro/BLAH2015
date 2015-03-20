@@ -2,6 +2,7 @@
 
 <h2>General Overview</h2>
 Our project aimed to create automated annotations for articles retrieved from Europe PMC (http://europepmc.org/). To achieve this goal we divided the project into 4 parts, creating a python script to work on each one of them.
+<br/>
 The information on BLAH 2015 can be found on its website: http://2015.linkedannotation.org/
 
 <h2>Scripts description</h2>
