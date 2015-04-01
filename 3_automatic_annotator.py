@@ -35,8 +35,16 @@ def get_json(url):
 #If the text is too big, lets split it in parts 
 def splitIterator(text, size):
     assert size > 0, "size should be > 0"
-    for start in xrange(0, len(text), size):
-        yield text[start:start + size]
+    begin_position = 0 # place where we start searching for
+    end_position = size #the end is the first position until updated (inside while loop)
+    while end_position < len(text):
+        end_position = begin_position + size # update last position 
+        match_at = text.rfind(' ', begin_position, end_position)
+        #try to look for the next blank after "size", if none is found return "size"
+        if match_at > -1:
+            end_position = match_at + 1
+        yield text[begin_position:end_position]
+        begin_position = end_position  # Update next starting position
 
 # Gets the annotation for an article from NCBO annotator
 def get_NCBO_annotation(article_id, sourcedb, div_id, text, timer_min, timer_max, ftw, json_url):
@@ -74,9 +82,8 @@ def annotate_with_NCBO_annotator(file_in, file_out, ontologies):
 		sourcedb = node.findtext('sourcedb')
 		div_id = node.findtext('div_id')
 		text = unescape(node.findtext('text'))
-		if len(text) >= 4000: #Avoid passing very long strings
-			splits=int(len(text)/1500) #1500 is a good hardcoded limit to split if text is too big
-			parts=splitIterator(text, 1500)
+		if len(text) >= 200: #Avoid passing very long strings
+			parts=splitIterator(text, 70)
 			for single_part in parts:
 				time.sleep(random.randint(1, 2)) #This timer is needed or the NCBO api will time you out
 				escaped_string = urllib2.quote(single_part.encode('utf-8'))
