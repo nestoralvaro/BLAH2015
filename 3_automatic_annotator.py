@@ -82,8 +82,8 @@ def annotate_with_NCBO_annotator(file_in, file_out, ontologies):
 		sourcedb = node.findtext('sourcedb')
 		div_id = node.findtext('div_id')
 		text = unescape(node.findtext('text'))
-		if len(text) >= 200: #Avoid passing very long strings
-			parts=splitIterator(text, 70)
+		if len(text) >= 4000: #Avoid passing very long strings
+			parts=splitIterator(text, 1500) #1500 is a good hardcoded limit to split if text is too big
 			for single_part in parts:
 				time.sleep(random.randint(1, 2)) #This timer is needed or the NCBO api will time you out
 				escaped_string = urllib2.quote(single_part.encode('utf-8'))
@@ -144,12 +144,14 @@ if __name__ == '__main__':
 	file_to_read = "file_for_annotator.XML"
 	file_to_write = str(file_to_read) + ".out.txt"
 	ftw = open(file_to_write,'w').close()
-	ontologies = "PATO,CHEBI" # enter NCBO ontologies here, separated by comma
+	ontologies = "CHEBI" # enter NCBO ontologies here, separated by comma
 	# First of all come the annotations done by NCBO annotator
 	annotate_with_NCBO_annotator(file_to_read, file_to_write, ontologies)
+	'''
 	dictionaries = ["PHENOM-dic.tsv", "PATIENT-dic.tsv"] # List of dictionaries to be used
 	# Then, we use the dictionaries to annotate the articles
 	for dictionary in dictionaries:
 		print "Annotating with dictionary " + str(dictionary)
 		annotate_with_dictionary(file_to_read, file_to_write, dictionary)
+	'''
 	print "Automatic annotation ended"
