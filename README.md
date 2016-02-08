@@ -34,7 +34,7 @@ The annotations are stored in a new file containing the offsets and the annotati
 
 The initial version of this script (in which this version is based) was created by jmbanda: https://github.com/jmbanda/BLAH2015
 
-<h3>4_store_json_annotation_in_pubannotation.py</h3>
-This script takes the annotations generated in the previous step and uploads these to pubannotation.
+<h3>4_merge_annotations.py</h3>
+This script takes the annotations generated in the previous step using NCBO annotator and the dictionary and combines them.
  
 
