@@ -37,4 +37,5 @@ The initial version of this script (in which this version is based) was created 
 <h3>4_merge_annotations.py</h3>
 This script takes the annotations generated in the previous step using NCBO annotator and the dictionary and combines them. The output will be stored in a file called *mergedAnnotations.txt*.
  
-
+<h3>5_prepare_json.py</h3>
+Once the previous step is done, we can prepare the Json files with the annotations for each article. All the son files will be stored to *"json_output"* folder although it can be changed in <code>file_with_json_objects = "json_output"</code> line.
