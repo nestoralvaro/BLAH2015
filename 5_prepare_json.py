@@ -290,5 +290,8 @@ if __name__ == '__main__':
   print "Started at  (" + initTime + ")"
   print "Finished at (" + str(datetime.datetime.now()) + ")"
 
-  # When the code ends, create teh TAR.GZ file
+  # After the program runs (and produces the JSON files with the annotations), we
+  #   create the TAR.GZ file using the following command:
   # tar -cvzf annotations.tar.gz json_output/
+
+  
