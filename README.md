@@ -15,7 +15,7 @@ Our query contained the name of the drugs included in our study.<br/>
 As the API does not allow concatenation of search terms we had to query each drug separately. Articles IDs can be queried too:<br/>
 <code>search_terms = ["PMC2548241", "PMC4319657"]</code><br/>
 After the query has taken place the code iterates over all results storing the IDs.
-The IDs are then used to store the articles in pubannotation website (pubannotation.org).
+The IDs are then used to store the articles in pubannotation website (http://pubannotation.org).
 
 <h3>2_pubannotation_article_processor.py</h3>
 This script runs over all the articles stored in pubannotation by the previous script and outputs the lines that contain a patient descriptor.
@@ -28,7 +28,7 @@ This script invokes NCBO annotator using the selected ontologies. In our case we
 The full list of ontologies supported by NCBO annotator can be found in their website (http://bioportal.bioontology.org/ontologies)
 This script also allows the use of dictionaries. The dictionaries should contain 2 fields separated by a tab<br/>
 <code>Term_ID TAB_SEPARATOR Description_of_the_term</code><br/>
-In our case we use a Phenotype dictionary (generated from Phenominer's S3 file: https://github.com/nhcollier/PhenoMiner/blob/master/data/S3.gz) and the patients dictionary:<br/>
+In our case we use a Phenotype dictionary (generated from Phenominer's S3 file: https://github.com/nhcollier/PhenoMiner/blob/master/data/S3.gz) and the patients dictionary:
 <code>dictionaries = ["PHENOM-dic.tsv", "PATIENT-dic.tsv"]</code><br/>
 The annotations are stored in a new file containing the offsets and the annotations (use variable "file_to_write" to specify the name of the output).
 
@@ -39,3 +39,12 @@ This script takes the annotations generated in the previous step using NCBO anno
  
 <h3>5_prepare_json.py</h3>
 Once the previous step is done, we can prepare the Json files with the annotations for each article. All the Json files will be stored to *"json_output"* folder although it can be changed in the line <code>file_with_json_objects = "json_output"</code> of this file.
+
+<h3>Uploading the annotations</h3>
+To upload the annotations to PubAnnotations (http://pubannotation.org) you can create a tar.gz file and then upload it to the desired project you own.
+
+
+In our case we used the bulk upload functionality (http://www.pubannotation.org/docs/submit-annotation/) after generating a **tar.gz** file called *annotations.tar.gz* with this command <code>tar -cvzf annotations.tar.gz json_output/</code>.
+
+The resulting annotations will be available for download.
+
