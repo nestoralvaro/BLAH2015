@@ -30,7 +30,7 @@ This script also allows the use of dictionaries. The dictionaries should contain
 <code>Term_ID TAB_SEPARATOR Description_of_the_term</code><br/>
 In our case we use a Phenotype dictionary (generated from Phenominer's S3 file: https://github.com/nhcollier/PhenoMiner/blob/master/data/S3.gz) and the patients dictionary:<br/>
 <code>dictionaries = ["PHENOM-dic.tsv", "PATIENT-dic.tsv"]</code><br/>
-The annotations are stored in a new file containing the offsets and the annotations.
+The annotations are stored in a new file containing the offsets and the annotations (use variable "file_to_write" to specify the name of the output).
 
 The initial version of this script (in which this version is based) was created by jmbanda: https://github.com/jmbanda/BLAH2015
 
