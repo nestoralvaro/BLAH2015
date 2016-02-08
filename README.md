@@ -35,6 +35,6 @@ The annotations are stored in a new file containing the offsets and the annotati
 The initial version of this script (in which this version is based) was created by jmbanda: https://github.com/jmbanda/BLAH2015
 
 <h3>4_merge_annotations.py</h3>
-This script takes the annotations generated in the previous step using NCBO annotator and the dictionary and combines them.
+This script takes the annotations generated in the previous step using NCBO annotator and the dictionary and combines them. The output will be stored in a file called *mergedAnnotations.txt*.
  
 
