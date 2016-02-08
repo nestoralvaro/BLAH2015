@@ -28,7 +28,7 @@ This script invokes NCBO annotator using the selected ontologies. In our case we
 The full list of ontologies supported by NCBO annotator can be found in their website (http://bioportal.bioontology.org/ontologies)
 This script also allows the use of dictionaries. The dictionaries should contain 2 fields separated by a tab<br/>
 <code>Term_ID TAB_SEPARATOR Description_of_the_term</code><br/>
-In our case we use a Phenotype dictionary (generated from Phenominer's S3 file: https://github.com/nhcollier/PhenoMiner/blob/master/data/S3.gz) and the patients dictionary:
+In our case we use a Phenotype dictionary (generated from Phenominer's S3 file: https://github.com/nhcollier/PhenoMiner/blob/master/data/S3.gz) and the patients dictionary:<br/>
 <code>dictionaries = ["PHENOM-dic.tsv", "PATIENT-dic.tsv"]</code><br/>
 The annotations are stored in a new file containing the offsets and the annotations (use variable "file_to_write" to specify the name of the output).
 
@@ -44,7 +44,7 @@ Once the previous step is done, we can prepare the Json files with the annotatio
 To upload the annotations to PubAnnotations (http://pubannotation.org) you can create a tar.gz file and then upload it to the desired project you own.
 
 
-In our case we used the bulk upload functionality (http://www.pubannotation.org/docs/submit-annotation/) after generating a **tar.gz** file called *annotations.tar.gz* with this command <code>tar -cvzf annotations.tar.gz json_output/</code>.
+In our case we used the batch upload functionality (http://www.pubannotation.org/docs/submit-annotation/) after generating a **tar.gz** file called *annotations.tar.gz* with this command <code>tar -cvzf annotations.tar.gz json_output/</code>.
 
-The resulting annotations will be available for download.
+The resulting annotations will be available for download from PubAnnotation website.
 
