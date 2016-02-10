@@ -34,6 +34,9 @@ The annotations are stored in a new file containing the offsets and the annotati
 
 The initial version of this script (in which this version is based) was created by jmbanda: https://github.com/jmbanda/BLAH2015
 
+<h4>3b_automatic_annotator.py</h4>
+Alternatively, the file to be annotated with NCBO can be passed via the command line. That is specially useful when there is a large file as it could be split into parts using <source>x3_split_file.py</source> (and those parts will be placed in the folder <source>file_part/</source>), as <source>3b_automatic_annotator.py</source> can annotate all the parts independently (the resulting annotations will be placed in the folder <source>parts_output/</source>).
+
 <h3>4_merge_annotations.py</h3>
 This script takes the annotations generated in the previous step using NCBO annotator and the dictionary and combines them. The output will be stored in a file called *mergedAnnotations.txt*.
  
