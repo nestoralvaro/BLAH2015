@@ -37,7 +37,7 @@ The initial version of this script (in which this version is based) was created 
 <h4>3b_automatic_annotator.py</h4>
 Alternatively, the file to be annotated with NCBO can be passed as an argument when running the python script in the command line. That is specially useful when there is a large file to be annotated as such file could be split into parts using <code>x3_split_file.py</code> (The resulting parts will be placed in the folder <code>file_part/</code>).
 
-The script <code>3b_automatic_annotator.py</code> can annotate all the parts independently (the resulting annotations will be placed in the folder <code>parts_output/</code>).
+The script <code>3b_automatic_annotator.py</code> can annotate all the parts independently (the resulting annotations will be placed in the folder <code>parts_output/</code>). To launch the annotator many times you can use a custom script similar to the one called *parallelize.sh*
 
 Once you have all the annotations in place you only have to put them together into one large file (i.e. $ cat annotation1 annotation2... annotationN > AllAnnotations) and then move on to the next step.
 
