@@ -39,8 +39,12 @@ Alternatively, the file to be annotated with NCBO can be passed as an argument w
 
 The script <code>3b_automatic_annotator.py</code> can annotate all the parts independently (the resulting annotations will be placed in the folder <code>parts_output/</code>).
 
+Once you have all the annotations in place you only have to put them together into one large file (i.e. $ cat annotation1 annotation2... annotationN > AllAnnotations) and then move on to the next step.
+
 <h3>4_merge_annotations.py</h3>
 This script takes the annotations generated in the previous step using NCBO annotator and the dictionary and combines them. The output will be stored in a file called *mergedAnnotations.txt*.
+
+Change the names of the files to be merged in <code>listFiles</code> variable.
  
 <h3>5_prepare_json.py</h3>
 Once the previous step is done, we can prepare the Json files with the annotations for each article. All the Json files will be stored to *"json_output"* folder although it can be changed in the line <code>file_with_json_objects = "json_output"</code> of this file.
