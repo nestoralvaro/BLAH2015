@@ -56,7 +56,7 @@ This script is provided as a way to test which are the annotations that are goin
 
 
 <h3>Uploading the annotations</h3>
-To upload the annotations to PubAnnotations (http://pubannotation.org) you can create a tar.gz file and then upload it to the desired project you own.
+To upload the annotations to PubAnnotations (http://pubannotation.org) you can create a tar.gz file (including all the files in the folder *"json_output"* created two steps before: <code>5_prepare_json.py</code>) and then upload it to the desired project you own.
 
 
 In our case we used the batch upload functionality (http://www.pubannotation.org/docs/submit-annotation/) after generating a **tar.gz** file called *annotations.tar.gz* with this command <code>tar -cvzf annotations.tar.gz json_output/</code>.
