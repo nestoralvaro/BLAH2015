@@ -52,7 +52,7 @@ Once the previous step is done, we can prepare the Json files with the annotatio
 <h3>6_test_output_annotations.py</h3>
 This script receives the file with the annotations, and also the files with the texts, and prints out the annotations that are going to be stored.
 
-This script is provided as a way to test which are the annotations that are going to be stored.
+This script is provided as a way to test which are the annotations that are going to be stored in JSON files (in the previous step: <code>5_prepare_json.py</code>).
 
 
 <h3>Uploading the annotations</h3>
