@@ -49,6 +49,12 @@ Change the names of the files to be merged in <code>listFiles</code> variable.
 <h3>5_prepare_json.py</h3>
 Once the previous step is done, we can prepare the Json files with the annotations for each article. All the Json files will be stored to *"json_output"* folder although it can be changed in the line <code>file_with_json_objects = "json_output"</code> of this file.
 
+<h3>6_test_output_annotations.py</h3>
+This script receives the file with the annotations, and also the files with the texts, and prints out the annotations that are going to be stored.
+
+This script is provided as a way to test which are the annotations that are going to be stored.
+
+
 <h3>Uploading the annotations</h3>
 To upload the annotations to PubAnnotations (http://pubannotation.org) you can create a tar.gz file and then upload it to the desired project you own.
 
