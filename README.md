@@ -62,9 +62,9 @@ To upload the annotations to PubAnnotations (http://pubannotation.org) you can c
 In our case we used the batch upload functionality (http://www.pubannotation.org/docs/submit-annotation/) after generating a **tar.gz** file called *annotations.tar.gz* with this command <code>tar -cvzf annotations.tar.gz json_output/</code>.
 
 In case there are too many files to compress you may need to prepare the tar.gz file in 3 steps:
-1. Store the list of files to a file first <code>ls json_output/ > list_files.txt</code>
-2. Then, go to that directory <code>cd json_output</code>
-3. Compress the file using the list of files we prepared <code>tar -cvz -T ../list_files.txt -f NEUROSES.tar.gz</code>
+<br/>1. Store the list of files to a file first <code>ls json_output/ > list_files.txt</code>
+<br/>2. Then, go to that directory <code>cd json_output</code>
+<br/>3. Compress the file using the list of files we prepared <code>tar -cvz -T ../list_files.txt -f NEUROSES.tar.gz</code>
 
 
 The resulting annotations will be available for download from PubAnnotation website.
